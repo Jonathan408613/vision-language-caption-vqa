@@ -1,0 +1,30 @@
+name: mm-visionlang
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pytorch>=2.2
+  - torchvision>=0.17
+  - cudatoolkit # or pytorch-cuda=12.1 on newer setups
+  - pip
+  - pip:
+  - transformers>=4.46.0
+  - accelerate>=0.34.0
+  - datasets>=2.21.0
+  - pillow
+  - timm
+  - sentencepiece
+  - peft>=0.11.1
+  - bitsandbytes>=0.43.0
+  - evaluate
+  - sacrebleu
+  - nltk
+  - gradio>=4.44.0
+  - pycocotools
+  - pycocoevalcap # provides BLEU, CIDEr, METEOR, ROUGE-L
+  - jsonlines
+  - tqdm
+  - matplotlib
